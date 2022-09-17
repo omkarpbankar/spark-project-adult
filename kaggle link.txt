@@ -1,0 +1,2 @@
+https://www.kaggle.com/code/overload10/income-prediction-on-uci-adult-dataset
+https://www.kaggle.com/datasets/overload10/adult-census-dataset
