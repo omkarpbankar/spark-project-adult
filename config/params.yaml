@@ -1,0 +1,10 @@
+data_download:
+  cloud_training_directory_path:
+
+data_source:
+  Training_Batch_Files:
+
+
+log_databse:
+  training_databse_name:
+  
