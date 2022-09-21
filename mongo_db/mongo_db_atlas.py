@@ -8,10 +8,10 @@ from adult_exception.adult_exception import AdultException as MongoDBException
 class MongoDBOperation:
     def __init__(self, user_name=None,password=None):
         try:
-            if user_name is None or password is None:
                 # Creating initial object to fetch mongoDB credentials
+            if user_name is None or password is None:
                 credentials = {
-                    'user_name': 'pythonbyomkar'
+                    'user_name': 'pythonbyomkar',
                     'password': "abraka_dabra"
                 }
                 self.__user_name = credentials['user_name']
@@ -56,6 +56,27 @@ class MongoDBOperation:
                 "Failed to fetch data base client object in module [{0}] class [{1}] method [{2}]"
                 .format(MongoDBOperation.__module__.__str__(),MongoDBOperation.__name__,
                 self.get_databse_client_object.__name__))
+            raise Exception(mongo_db_exception.error_message_detail(str(e),sys)) from e
+
+    def close_database_client_object(self, obj_name):
+        """
+        param obj_name: pymongo client object name.
+    
+        """
+        try:
+            obj_name.close()
+            return True
+        
+        except Exception as e:
+            mongo_db_exception = MongoDBException(
+                "Failed to close data base client object in module [{0}] class [{}] method [{}]"
+                .format(MongoDBOperation.__module__.__str__(), MongoDBOperation.__name__,
+                self.close_database_client_object.__name__))
             raise Exception(mongo_db_exception.error_message_detail(str(e),sys)) from e 
-    
-    
+
+    def is_database_present(self, client, db_name):
+        """
+        
+        """
+
+        
