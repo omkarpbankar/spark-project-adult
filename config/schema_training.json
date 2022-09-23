@@ -1,0 +1,9 @@
+{
+    "SampleFileName" : "Adult_26092020_131534.csv",
+    "LengthOfDateStampInFile" : 8,
+    "LengthOfTimeStampInFile" : 6,
+    "NumberOfColumns": 15,
+    "ColName" : {
+        
+    }
+}
