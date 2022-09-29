@@ -2,12 +2,12 @@ import os
 from datetime import datetime
 import uuid
 import sys
-from salary_exception.salary_exception import SalaryExceptoin as AppLoggerException
+from adult_exception.adult_exception import AdultException as AppLoggerException
 from mongo_db.mongo_db_atlas import MongoDBOperation
 
 class AppLogger:
     def _init__(self,project_id,log_databse,log_collection_name, executed_by,
-                execution_id, is_log_enabled=True):
+                execution_id, is_log_enable=True):
 
         try:
             self.project_id=project_id
@@ -15,7 +15,7 @@ class AppLogger:
             self.log_collection_name=log_collection_name
             self.executed_by=executed_by
             self.execution_id=execution_id
-            self.is_log_enabled=is_log_enabled
+            self.is_log_enable=is_log_enable
             self.mongo_db_object=MongoDBOperation()
 
         except Exception as e:
@@ -27,7 +27,7 @@ class AppLogger:
 
     def log(self,log_message):
         try:
-            if not self.is_log_enabled:
+            if not self.is_log_enable:
                 return 0
             log_data = {
                 'execution_id': self.execution_id,

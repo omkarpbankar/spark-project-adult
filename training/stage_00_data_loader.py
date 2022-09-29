@@ -3,7 +3,7 @@ import sys
 import shutil
 from utility import read_params
 import argparse
-from utility import get_logger_object_of_training
+from utility import get_logger_object_of_training 
 from utility import clean_data_source_dir
 from adult_exception.adult_exception import AdultException as GenericException
 
@@ -65,4 +65,4 @@ if __name__ == "__main__":
     args.add_argument("--datasource","-d", default=None)
     parsed_args=args.parse_args()
     print('stage_00_data_loader')
-    loader_main(config_path=parsed_args.config,datasource=parsed_args.datasource)
+    
